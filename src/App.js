@@ -17,7 +17,7 @@ function App() {
 
   function updateName(name){
     setName(name)
-  }
+}
 
   function updateOffice(office){
     setOffice(office)
@@ -37,12 +37,9 @@ function updateListEmploy({name, office, registration, management}){
   console.log(listEmploy)
 }
 
-
-
-
-
   return (
-       <div className="app">
+  
+       <form className="app">
         <h1>Avaliação de Desempenho</h1>
         <Cadastro
          updateName={updateName}
@@ -50,10 +47,11 @@ function updateListEmploy({name, office, registration, management}){
          updateRegistration={updateRegistration}
          updateManagement={updateManagement}
          updateListEmploy = {updateListEmploy}
-
          />
         <PreparoQualificacao/>
-      </div>
+        <button>Enviar</button>
+      </form>
+   
 
   );
 }
