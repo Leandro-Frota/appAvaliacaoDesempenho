@@ -6,24 +6,26 @@ import { useState } from "react";
 
 function PreparoQualificacao(){
 
-    const [check, setCheck] = useState(false)
+    const [valueQuestion1, setValueQuestion1] = useState(0)
 
-    function captureCheck(check){
-        setCheck(check)
+    function captureValueQuestion1(value){
+        setValueQuestion1(value)
     }
 
-    console.log(check)
+    // console.log(check)
 
     return(
-        <div>
+        <div className="container">
             <h2>Preparo e qualificação</h2>
             <Question
             title='Conhecimento técnico'
             description='O empregado tem o conhecimento e habilidade necessários 
                         ao desenvolvimento das suas atividades, expressa confiança nas informações,
                         atividades e serviços prestados sob a sua responsabilidade'
-            pounds = {captureCheck}
+            pounds = {captureValueQuestion1}
             />
+
+            <p className="pounds">Pontuação Preparo e Qualificação : {valueQuestion1}</p>
 
         </div>
     )

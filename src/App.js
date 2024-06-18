@@ -2,7 +2,10 @@
 import { useState } from 'react';
 import './App.css';
 import Cadastro from './Componentes/Cadastro/Cadastro.jsx';
-import PreparoQualificacao from './Componentes/PreparoQualificacao/PreparoQualificacao.jsx'
+
+
+import PreparoQualificacao from './Componentes/PreparoQualificação/PreparoQualificação.jsx';
+
 
 function App() {
 
@@ -48,7 +51,10 @@ function updateListEmploy({name, office, registration, management}){
          updateManagement={updateManagement}
          updateListEmploy = {updateListEmploy}
          />
+
+        
         <PreparoQualificacao/>
+
         <button>Enviar</button>
       </form>
    
