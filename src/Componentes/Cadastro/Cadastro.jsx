@@ -16,15 +16,11 @@ function Cadastro(props) {
 
     function captureManagement(e){
         props.updateManagement(e.target.value)
-    }
-
-  
-
-  
+    }  
 
 
     return (
-        <form className='form' onSubmit={props.updateListEmploy}>
+        <div className='form' onSubmit={props.updateListEmploy}>
             <h2>Cadastro Funcionário</h2>
             <section className='wrapperEmploy'>
                 <div className='input'>
@@ -43,10 +39,10 @@ function Cadastro(props) {
                     <label htmlFor="registration">4.Gerência</label>
                     <input  onChange={captureManagement} className='registration' type="text" placeholder='Gerência' />
                 </div>
-                <button className='btnSaveEmploy'>Enviar</button>
+                {/* <button className='btnSaveEmploy'>Enviar</button> */}
 
             </section>
-        </form>
+        </div>
     )
 }
 
