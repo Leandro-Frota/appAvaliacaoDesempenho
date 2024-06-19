@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './Question.css'
+import Justify from '../Justificativa/Jistificativa'
 
 function Quiz({title,description, pounds}){
 
@@ -7,10 +8,11 @@ function Quiz({title,description, pounds}){
     const [valueB, setValueB] = useState(false)
     const [valueC, setValueC] = useState(false)
     const [valueTotal, setValueTotal] = useState(0)
+    const [valueJustify, setValueJustify]= useState("")
 
     pounds(valueTotal)
 
-    console.log(valueA,valueB,valueC,valueTotal)
+    console.log(valueA,valueB,valueC,valueTotal,valueJustify)
 
 
 
@@ -28,6 +30,13 @@ function Quiz({title,description, pounds}){
         // pounds(e.target.checked)
         setValueC(e.target.checked)  
     }
+
+    function captureJustify(value){
+       
+        setValueJustify(value)  
+    }
+
+    
 
     useEffect(()=>{
 
@@ -76,7 +85,9 @@ function Quiz({title,description, pounds}){
                             <input onChange={capturePoundsC}  className='inputC' type="checkbox" />
                         </div>
                     </div>
-            </div>                    
+                   
+            </div> 
+            <Justify captureJustify={captureJustify}/>                   
      </div>
 
             )

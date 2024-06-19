@@ -4,6 +4,7 @@ import { useState } from "react";
 
 
 
+
 function PreparoQualificacao(){
 
     const [valueQuestion1, setValueQuestion1] = useState(0)
@@ -24,6 +25,7 @@ function PreparoQualificacao(){
                         atividades e serviços prestados sob a sua responsabilidade'
             pounds = {captureValueQuestion1}
             />
+          
 
             <p className="pounds">Pontuação Preparo e Qualificação : {valueQuestion1}</p>
 
