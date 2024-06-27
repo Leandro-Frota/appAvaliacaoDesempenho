@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './Question.css'
 import Justify from '../Justificativa/Jistificativa'
 
-function Quiz({title,description, pounds}){
+function Quiz({title,description, pounds, item}){
 
     const [valueA, setValueA] = useState(false)
     const [valueB, setValueB] = useState(false)
@@ -17,17 +17,17 @@ function Quiz({title,description, pounds}){
 
 
     function capturePoundsA(e){
-        // pounds(e.target.checked)
+       
         setValueA(e.target.checked)
     }
 
     function capturePoundsB(e){
-        // pounds(e.target.checked)
+    
         setValueB(e.target.checked) 
     }
 
     function capturePoundsC(e){
-        // pounds(e.target.checked)
+   
         setValueC(e.target.checked)  
     }
 
@@ -62,11 +62,9 @@ function Quiz({title,description, pounds}){
     return(
 
         <div className='quizContainer'>
-
-
             <div className='quizContent'>                
                     <div className='quizContentType'>
-                        <p>{title}</p>
+                        <p><span>{item}</span>{title}</p>
                     </div>
                     <div className='quizContentTypeDescription'>
                        <p> {description}</p>
@@ -87,7 +85,7 @@ function Quiz({title,description, pounds}){
                     </div>
                    
             </div> 
-            <Justify captureJustify={captureJustify}/>                   
+            <Justify  valueA={valueA} captureJustify={captureJustify} required/>                   
      </div>
 
             )

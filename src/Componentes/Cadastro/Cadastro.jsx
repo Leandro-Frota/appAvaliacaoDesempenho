@@ -1,26 +1,26 @@
 import './Cadastro.css'
 
-function Cadastro(props) {
+function Cadastro({updateName,updateOffice,updateRegistration,updateManagement,updateListEmploy}) {
 
     function captureName(e){
-        props.updateName(e.target.value)
+       updateName(e.target.value)
     }
 
     function captureOffice(e){
-        props.updateOffice(e.target.value)
+        updateOffice(e.target.value)
     }
 
     function captureRegistration(e){
-        props.updateRegistration(e.target.value)
+        updateRegistration(e.target.value)
     }
 
     function captureManagement(e){
-        props.updateManagement(e.target.value)
+        updateManagement(e.target.value)
     }  
 
 
     return (
-        <div className='form' onSubmit={props.updateListEmploy}>
+        <div className='form' onSubmit={updateListEmploy}>
             <h2>Cadastro Funcionário</h2>
             <section className='wrapperEmploy'>
                 <div className='input'>
@@ -39,7 +39,7 @@ function Cadastro(props) {
                     <label htmlFor="registration">4.Gerência</label>
                     <input  onChange={captureManagement} className='registration' type="text" placeholder='Gerência' />
                 </div>
-                {/* <button className='btnSaveEmploy'>Enviar</button> */}
+           
 
             </section>
         </div>

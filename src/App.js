@@ -17,6 +17,7 @@ function App() {
 
  
   console.log(name, office, registration, management)
+  console.log(listEmploy)
 
   function updateName(name){
     setName(name)
@@ -37,8 +38,10 @@ function updateManagement(management){
 function updateListEmploy({name, office, registration, management}){
   const register = [name, office, registration, management]
   setListEmploy(...listEmploy,register)
-  console.log(listEmploy)
+  
 }
+
+
 
   return (
   
@@ -53,7 +56,7 @@ function updateListEmploy({name, office, registration, management}){
          />
 
         
-        <PreparoQualificacao/>
+        <PreparoQualificacao module="1."/>
 
         <button>Enviar</button>
       </form>

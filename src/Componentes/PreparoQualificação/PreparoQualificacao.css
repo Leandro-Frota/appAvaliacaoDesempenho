@@ -1,14 +1,18 @@
 .container{
     color: #fff;
     padding: 1rem;
+    border: 1px solid #777C83;
 }
 
 h2{
-    text-align: center;
+    text-align: start;
 }
 
 .pounds{
     text-align: end;
     
+}
+span{
+    margin-right: 0.5rem;
 }
 
