@@ -39,7 +39,7 @@ function PreparoQualificacao({module}){
     // console.log(check)
 
     return(
-        <div className="container">
+        <div style ={{display: 'none'}} className="container">
             <h2><span>{module}</span>Preparo e qualificação</h2>
             <Question
             item="1.1"

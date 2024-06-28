@@ -14,10 +14,12 @@ function App() {
   const [registration,setRegistration] = useState("")
   const [management,setManagement] = useState("")
   const [listEmploy, setListEmploy] = useState([])
+  const [display,setDisplay] = useState('none')
 
  
   console.log(name, office, registration, management)
-  console.log(listEmploy)
+  console.log(display)
+
 
   function updateName(name){
     setName(name)
@@ -41,13 +43,22 @@ function updateListEmploy({name, office, registration, management}){
   
 }
 
+function toggle(){
+
+}
+
 
 
   return (
   
        <form className="app">
         <h1>Avaliação de Desempenho</h1>
+        <div className='btnContainer'>
+          <div  className='btnRegister'>Cadastro</div>
+          <div className='btnPreparationQualification'>Preparo e Qualificação</div>
+        </div>
         <Cadastro
+        display={display}
          updateName={updateName}
          updateOffice={updateOffice}
          updateRegistration={updateRegistration}
@@ -58,7 +69,7 @@ function updateListEmploy({name, office, registration, management}){
         
         <PreparoQualificacao module="1."/>
 
-        <button>Enviar</button>
+        {/* <button>Enviar</button>  */}
       </form>
    
 
