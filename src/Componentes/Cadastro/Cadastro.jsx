@@ -20,7 +20,7 @@ function Cadastro({updateName,updateOffice,updateRegistration,updateManagement,u
 
 
     return (
-        <div className='form' onSubmit={updateListEmploy} style={{display: {display}}}>
+        <div className='form' onSubmit={updateListEmploy} style={{display: display}}>
             <h2>Cadastro Funcionário</h2>
             <section className='wrapperEmploy'>
                 <div className='input'>
@@ -42,6 +42,7 @@ function Cadastro({updateName,updateOffice,updateRegistration,updateManagement,u
            
 
             </section>
+            <button>Enviar</button>
         </div>
     )
 }

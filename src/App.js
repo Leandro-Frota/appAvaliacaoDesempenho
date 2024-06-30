@@ -14,11 +14,11 @@ function App() {
   const [registration,setRegistration] = useState("")
   const [management,setManagement] = useState("")
   const [listEmploy, setListEmploy] = useState([])
-  const [display,setDisplay] = useState('none')
+  const [displayShow,setDisplayShow] = useState("none")
 
  
-  console.log(name, office, registration, management)
-  console.log(display)
+  // console.log(name, office, registration, management, displayShow)
+
 
 
   function updateName(name){
@@ -44,7 +44,11 @@ function updateListEmploy({name, office, registration, management}){
 }
 
 function toggle(){
-
+  if(displayShow === "none"){
+    setDisplayShow("")
+  }else{
+    setDisplayShow("none")
+  }
 }
 
 
@@ -54,11 +58,11 @@ function toggle(){
        <form className="app">
         <h1>Avaliação de Desempenho</h1>
         <div className='btnContainer'>
-          <div  className='btnRegister'>Cadastro</div>
+          <div onClick={toggle} className='btnRegister'>Cadastro</div>
           <div className='btnPreparationQualification'>Preparo e Qualificação</div>
         </div>
         <Cadastro
-        display={display}
+        display={displayShow}
          updateName={updateName}
          updateOffice={updateOffice}
          updateRegistration={updateRegistration}
