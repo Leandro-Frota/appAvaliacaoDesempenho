@@ -14,10 +14,15 @@ function App() {
   const [registration,setRegistration] = useState("")
   const [management,setManagement] = useState("")
   const [listEmploy, setListEmploy] = useState([])
-  const [displayShow,setDisplayShow] = useState("none")
+  const [displayRegister,setDisplayRegister] = useState("none")
+  const [displayPrepareQualificacion, setPrepareQualificacion] = useState("none")
+
+  // console.log(displayPrepareQualificacion)
+  console.log(displayRegister)
+
 
  
-  // console.log(name, office, registration, management, displayShow)
+  console.log(name, office, registration, management,listEmploy)
 
 
 
@@ -43,41 +48,53 @@ function updateListEmploy({name, office, registration, management}){
   
 }
 
-function toggle(){
-  if(displayShow === "none"){
-    setDisplayShow("")
+function toggleRegister(){
+  if(displayRegister === "none" ){
+    setPrepareQualificacion("none")
+    setDisplayRegister("")
   }else{
-    setDisplayShow("none")
+    setDisplayRegister("none")
+  }
+
+}
+
+function togglePrepQual(){
+  if(displayPrepareQualificacion === "none" ){
+    setDisplayRegister("none")
+    setPrepareQualificacion("")
+  }else{
+    setPrepareQualificacion("none")
   }
 }
 
 
-
   return (
   
-       <form className="app">
-        <h1>Avaliação de Desempenho</h1>
-        <div className='btnContainer'>
-          <div onClick={toggle} className='btnRegister'>Cadastro</div>
-          <div className='btnPreparationQualification'>Preparo e Qualificação</div>
-        </div>
-        <Cadastro
-        display={displayShow}
-         updateName={updateName}
-         updateOffice={updateOffice}
-         updateRegistration={updateRegistration}
-         updateManagement={updateManagement}
-         updateListEmploy = {updateListEmploy}
-         />
+          <form className="app">
+            <h1>Avaliação de Desempenho</h1>
+            <div className='btnContainer'>
+              <div onClick={toggleRegister}  className='btnRegister'>Cadastro</div>
+              <div onClick={togglePrepQual}  className='btnPreparationQualification'>Preparo e Qualificação</div>
+            </div>
+            <Cadastro
+            display={displayRegister}
+            updateName={updateName}
+            updateOffice={updateOffice}
+            updateRegistration={updateRegistration}
+            updateManagement={updateManagement}
+            updateListEmploy = {updateListEmploy}
+            />
 
-        
-        <PreparoQualificacao module="1."/>
+            <PreparoQualificacao
+            display={displayPrepareQualificacion}
+            module="1."
+            />
 
-        {/* <button>Enviar</button>  */}
-      </form>
-   
-
-  );
+       
+        </form>
+      );
 }
+
+
 
 export default App;
