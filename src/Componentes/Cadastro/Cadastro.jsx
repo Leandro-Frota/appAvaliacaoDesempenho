@@ -1,7 +1,7 @@
 import './Cadastro.css'
 
-function Cadastro({updateName,updateOffice,updateRegistration,updateManagement,updateListEmploy}) {
-
+function Cadastro({updateName,updateOffice,updateRegistration,updateManagement,updateListEmploy,display}) {
+     console.log(display)
     function captureName(e){
        updateName(e.target.value)
     }
@@ -20,12 +20,12 @@ function Cadastro({updateName,updateOffice,updateRegistration,updateManagement,u
 
 
     return (
-        <div className='form' onSubmit={updateListEmploy}>
+        <div className='form' onSubmit={updateListEmploy} style={{display: display}}>
             <h2>Cadastro Funcionário</h2>
             <section className='wrapperEmploy'>
                 <div className='input'>
                     <label htmlFor="nameEmploye">1.Nome</label>
-                    <input  onChange={captureName} className='nameEmploye' type="text" placeholder='Nome completo' />
+                    <input  onChange={captureName} className='nameEmploye' type="text" placeholder='Nome completo' required/>
                 </div>
                 <div className='input'>
                     <label htmlFor="office">2.Cargo</label>
@@ -42,6 +42,7 @@ function Cadastro({updateName,updateOffice,updateRegistration,updateManagement,u
            
 
             </section>
+            <button>Enviar</button>
         </div>
     )
 }

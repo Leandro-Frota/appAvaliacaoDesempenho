@@ -2,7 +2,8 @@ import "./PreparoQualificacao.css"
 import Question from "../Question/Question";
 import { useEffect, useState } from "react";
 
-function PreparoQualificacao({module}){
+function PreparoQualificacao({module,display}){
+    console.log(display)
 
     const [valueQuestion1, setValueQuestion1] = useState(0)
     const [valueQuestion2, setValueQuestion2] = useState(0)
@@ -39,7 +40,7 @@ function PreparoQualificacao({module}){
     // console.log(check)
 
     return(
-        <div className="container">
+        <div  className="container" style={{display: display}}>
             <h2><span>{module}</span>Preparo e qualificação</h2>
             <Question
             item="1.1"

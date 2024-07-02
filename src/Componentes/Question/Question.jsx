@@ -12,7 +12,7 @@ function Quiz({title,description, pounds, item}){
 
     pounds(valueTotal)
 
-    console.log(valueA,valueB,valueC,valueTotal,valueJustify)
+    // console.log(valueA,valueB,valueC,valueTotal,valueJustify)
 
 
 
