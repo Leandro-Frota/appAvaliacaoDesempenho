@@ -3,7 +3,7 @@ import Question from "../Question/Question";
 import { useEffect, useState } from "react";
 
 function PreparoQualificacao({module,display}){
-    console.log(display)
+
 
     const [valueQuestion1, setValueQuestion1] = useState(0)
     const [valueQuestion2, setValueQuestion2] = useState(0)
@@ -12,6 +12,8 @@ function PreparoQualificacao({module,display}){
     const [valueQuestion5, setValueQuestion5] = useState(0)
     const [valueQuestion6, setValueQuestion6] = useState(0)
     const [valueSum,setValueSum] = useState(0)
+    // const [justifyQuestion1, setJustifyQuestion1] = useState("")
+    // console.log(justifyQuestion1)
 
     function captureValueQuestion1(value){
         setValueQuestion1(value)
@@ -31,13 +33,16 @@ function PreparoQualificacao({module,display}){
     function captureValueQuestion6(value){
         setValueQuestion6(value)
     }
+    // function captureJustify(value){
+    //     setJustifyQuestion1(value)
+    // }
 
    useEffect(()=>{ 
     const total = valueQuestion1 + valueQuestion2 + valueQuestion3 + valueQuestion4 + valueQuestion5+valueQuestion6;
     setValueSum(total);
     },[valueQuestion1,valueQuestion2,valueQuestion3,valueQuestion4,valueQuestion5,valueQuestion6]) // monitora as mudanças nas variáveis, qunando um dos valores muda o efeito é executado.
 
-    // console.log(check)
+  
 
     return(
         <div  className="container" style={{display: display}}>
@@ -49,6 +54,7 @@ function PreparoQualificacao({module,display}){
                         ao desenvolvimento das suas atividades, expressa confiança nas informações,
                         atividades e serviços prestados sob a sua responsabilidade.'
             pounds = {captureValueQuestion1}
+            // captureJustify = {captureJustify}
             />
             <Question
             item="1.2"

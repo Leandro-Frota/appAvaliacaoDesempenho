@@ -13,18 +13,10 @@ function App() {
   const [office,setOffice] = useState("")
   const [registration,setRegistration] = useState("")
   const [management,setManagement] = useState("")
-  const [listEmploy, setListEmploy] = useState([])
   const [displayRegister,setDisplayRegister] = useState("none")
   const [displayPrepareQualificacion, setPrepareQualificacion] = useState("none")
 
-  // console.log(displayPrepareQualificacion)
-  console.log(displayRegister)
-
-
  
-  console.log(name, office, registration, management,listEmploy)
-
-
 
   function updateName(name){
     setName(name)
@@ -41,12 +33,6 @@ function updateManagement(management){
   setManagement(management)
 }
 
-
-function updateListEmploy({name, office, registration, management}){
-  const register = [name, office, registration, management]
-  setListEmploy(...listEmploy,register)
-  
-}
 
 function toggleRegister(){
   if(displayRegister === "none" ){
@@ -67,10 +53,40 @@ function togglePrepQual(){
   }
 }
 
+function onSubmitRegister(){
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  
+  const raw = JSON.stringify({
+    name,
+    office,
+    registration,
+    management,
+  });
+  
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow"
+  };
+  
+  fetch("http://localhost:8000/cadastro", requestOptions)
+    .then((response) =>{
+    if(response.status !== 200){
+      throw new Error("Erro ao realizar cadastro")
+    }
+     alert("Cadastro realizado com sucesso")
+    })
+    .then((result) => console.log(result))
+    .catch((error) => 
+      alert("Erro no cadastro"));
+}
+
 
   return (
   
-          <form className="app">
+          <form onSubmit={onSubmitRegister} className="app">
             <h1>Avaliação de Desempenho</h1>
             <div className='btnContainer'>
               <div onClick={toggleRegister}  className='btnRegister'>Cadastro</div>
@@ -82,7 +98,7 @@ function togglePrepQual(){
             updateOffice={updateOffice}
             updateRegistration={updateRegistration}
             updateManagement={updateManagement}
-            updateListEmploy = {updateListEmploy}
+        
             />
 
             <PreparoQualificacao
@@ -90,7 +106,7 @@ function togglePrepQual(){
             module="1."
             />
 
-       
+        
         </form>
       );
 }
