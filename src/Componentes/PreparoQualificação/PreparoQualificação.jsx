@@ -2,7 +2,7 @@ import "./PreparoQualificacao.css"
 import Question from "../Question/Question";
 import { useEffect, useState } from "react";
 
-function PreparoQualificacao({module,display}){
+function PreparoQualificacao({module,display,updateResumePrepQuali}){
 
 
     const [valueQuestion1, setValueQuestion1] = useState(0)
@@ -12,8 +12,20 @@ function PreparoQualificacao({module,display}){
     const [valueQuestion5, setValueQuestion5] = useState(0)
     const [valueQuestion6, setValueQuestion6] = useState(0)
     const [valueSum,setValueSum] = useState(0)
-    // const [justifyQuestion1, setJustifyQuestion1] = useState("")
-    // console.log(justifyQuestion1)
+    const [justifyQuestion1, setJustifyQuestion1] = useState("")
+    const [justifyQuestion2, setJustifyQuestion2] = useState("")
+    const [justifyQuestion3, setJustifyQuestion3] = useState("")
+    const [justifyQuestion4, setJustifyQuestion4] = useState("")
+    const [justifyQuestion5, setJustifyQuestion5] = useState("")
+    const [justifyQuestion6, setJustifyQuestion6] = useState("")
+  
+    const resumePrepQuali = {
+        valueQuestion1,
+        justifyQuestion1
+    }
+    // updateResumePrepQuali("resumePrepQuali")
+
+    console.log(resumePrepQuali)
 
     function captureValueQuestion1(value){
         setValueQuestion1(value)
@@ -33,8 +45,27 @@ function PreparoQualificacao({module,display}){
     function captureValueQuestion6(value){
         setValueQuestion6(value)
     }
-    // function captureJustify(value){
-    //     setJustifyQuestion1(value)
+    function captureJustify1(value){
+        setJustifyQuestion1(value)
+    }
+    function captureJustify2(value){
+        setJustifyQuestion2(value)
+    }
+    function captureJustify3(value){
+        setJustifyQuestion3(value)
+    }
+    function captureJustify4(value){
+        setJustifyQuestion4(value)
+    }
+    function captureJustify5(value){
+        setJustifyQuestion5(value)
+    }
+    function captureJustify6(value){
+        setJustifyQuestion6(value)
+    }
+
+    // function onSubmitPrepQuali(resumePrepQuali){
+    //     updateResumePrepQuali(resumePrepQuali)
     // }
 
    useEffect(()=>{ 
@@ -42,7 +73,11 @@ function PreparoQualificacao({module,display}){
     setValueSum(total);
     },[valueQuestion1,valueQuestion2,valueQuestion3,valueQuestion4,valueQuestion5,valueQuestion6]) // monitora as mudanças nas variáveis, qunando um dos valores muda o efeito é executado.
 
-  
+//   useEffect(()=>{
+//     const resume = {valueQuestion1,justifyQuestion1};
+//     updateResumePrepQuali(resume);
+
+//   },[updateResumePrepQuali,valueQuestion1,justifyQuestion1])
 
     return(
         <div  className="container" style={{display: display}}>
@@ -54,7 +89,7 @@ function PreparoQualificacao({module,display}){
                         ao desenvolvimento das suas atividades, expressa confiança nas informações,
                         atividades e serviços prestados sob a sua responsabilidade.'
             pounds = {captureValueQuestion1}
-            // captureJustify = {captureJustify}
+            captureJustifyItemA = {captureJustify1}
             />
             <Question
             item="1.2"
@@ -62,6 +97,7 @@ function PreparoQualificacao({module,display}){
             description='Identifica, interpreta e avalia diferentes tipos de dados,
                          relacionando-os de forma lógica.'
             pounds = {captureValueQuestion2}
+            captureJustifyItemA = {captureJustify2}
             />
              <Question
              item="1.3"
@@ -69,6 +105,7 @@ function PreparoQualificacao({module,display}){
             description='Executa as atividades de forma crítica, sugere e implanta novas práticas visando
                         a melhoria das atividades e processos.'
             pounds = {captureValueQuestion3}
+            captureJustifyItemA = {captureJustify3}
             />
              <Question
             item="1.4"
@@ -76,6 +113,7 @@ function PreparoQualificacao({module,display}){
             description='Busca, sistematiza, registra e dissemina o conhecimento de modo a transformá-lo
                         em vantagem para a empresa.'
             pounds = {captureValueQuestion4}
+            captureJustifyItemA = {captureJustify4}
             />
             <Question
             item="1.5"
@@ -83,6 +121,7 @@ function PreparoQualificacao({module,display}){
             description='Planeja e organiza adequadamente suas tarefas, materiais, documentos e outros
                         que utiliza para a realização do seu trabalho'
             pounds = {captureValueQuestion5}
+            captureJustifyItemA = {captureJustify5}
             />
             <Question
             item="1.6"
@@ -90,13 +129,18 @@ function PreparoQualificacao({module,display}){
             description='Escuta atentamente e expressa suas ideais verbalmente e por escrito , usando linguagem
                         clara e objetiva, certificando-se do entendimento das mensagens transmitidas.'
             pounds = {captureValueQuestion6}
+            captureJustifyItemA = {captureJustify6}
             />
 
             <p className="pounds">Pontuação Preparo e Qualificação : {valueSum}</p>
+
+            <button >Enviar</button>
             
-            </div>
+        </div>
     )
     
 }
 
 export default PreparoQualificacao
+
+// onSubmit={onSubmitPrepQuali}

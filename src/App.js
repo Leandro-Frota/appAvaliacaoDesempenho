@@ -15,14 +15,15 @@ function App() {
   const [management,setManagement] = useState("")
   const [displayRegister,setDisplayRegister] = useState("none")
   const [displayPrepareQualificacion, setPrepareQualificacion] = useState("none")
-
+  // const [resumeItemPrepQuali, setResumeItemPrepQuali] = useState()
  
+  // console.log(resumeItemPrepQuali)
 
-  function updateName(name){
+function updateName(name){
     setName(name)
 }
 
-  function updateOffice(office){
+function updateOffice(office){
     setOffice(office)
 }
 
@@ -32,6 +33,10 @@ function updateRegistration(registration){
 function updateManagement(management){
   setManagement(management)
 }
+
+// function updateResumePrepQuali(value){
+//   setResumeItemPrepQuali(value)
+// }
 
 
 function toggleRegister(){
@@ -62,6 +67,7 @@ function onSubmitRegister(){
     office,
     registration,
     management,
+    // resumeItemPrepQuali
   });
   
   const requestOptions = {
@@ -86,7 +92,7 @@ function onSubmitRegister(){
 
   return (
   
-          <form onSubmit={onSubmitRegister} className="app">
+          <div onSubmit={onSubmitRegister} className="app">
             <h1>Avaliação de Desempenho</h1>
             <div className='btnContainer'>
               <div onClick={toggleRegister}  className='btnRegister'>Cadastro</div>
@@ -104,10 +110,11 @@ function onSubmitRegister(){
             <PreparoQualificacao
             display={displayPrepareQualificacion}
             module="1."
+            // updateResumePrepQuali = {updateResumePrepQuali}
             />
 
         
-        </form>
+        </div>
       );
 }
 

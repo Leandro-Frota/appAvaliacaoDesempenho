@@ -1,7 +1,7 @@
 import './Cadastro.css'
 
 function Cadastro({updateName,updateOffice,updateRegistration,updateManagement,updateListEmploy,display}) {
-     console.log(display)
+     
     function captureName(e){
        updateName(e.target.value)
     }

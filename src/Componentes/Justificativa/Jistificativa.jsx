@@ -6,7 +6,7 @@ function Justify({captureJustify,valueA}){
     function handleTextArea(e){
         captureJustify(e.target.value)
     }
-    // console.log(valueA)
+ 
 
     return (
         <div className="justifyContainer">

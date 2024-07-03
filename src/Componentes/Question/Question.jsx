@@ -2,21 +2,16 @@ import { useEffect, useState } from 'react'
 import './Question.css'
 import Justify from '../Justificativa/Jistificativa'
 
-function Quiz({title,description, pounds, item,captureJustify}){
+function Quiz({title,description, pounds, item,captureJustifyItemA}){
 
     const [valueA, setValueA] = useState(false)
     const [valueB, setValueB] = useState(false)
     const [valueC, setValueC] = useState(false)
     const [valueTotal, setValueTotal] = useState(0)
-    const [valueJustify, setValueJustify]= useState("")
+    
 
     pounds(valueTotal)
-    // captureJustify(valueJustify)
-
-    console.log(valueJustify)
-
-
-
+ 
     function capturePoundsA(e){
        
         setValueA(e.target.checked)
@@ -32,12 +27,7 @@ function Quiz({title,description, pounds, item,captureJustify}){
         setValueC(e.target.checked)  
     }
 
-    function captureJustify(value){
-       
-        setValueJustify(value)  
-    }
-
-    
+   
 
     useEffect(()=>{
 
@@ -55,10 +45,7 @@ function Quiz({title,description, pounds, item,captureJustify}){
          }else {
             setValueTotal(0)
             alert("Marque apenas 1 check por item")
-         }
-     
-     
-    },[valueA, valueB, valueC])
+         }},[valueA, valueB, valueC])
     
     return(
 
@@ -86,7 +73,7 @@ function Quiz({title,description, pounds, item,captureJustify}){
                     </div>
                    
             </div> 
-            <Justify  valueA={valueA} captureJustify={captureJustify} required/>                   
+            <Justify  valueA={valueA} captureJustify={captureJustifyItemA} required/>                   
      </div>
 
             )
