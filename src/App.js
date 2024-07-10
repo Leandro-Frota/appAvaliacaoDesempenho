@@ -34,13 +34,11 @@ function updateManagement(management){
   setManagement(management)
 }
 
-
-
-
 function toggleRegister(){
   if(displayRegister === "none" ){
     setPrepareQualificacion("none")
     setDisplayRegister("")
+    setTrabalhoEmEquipe("none")
   }else{
     setDisplayRegister("none")
   }
@@ -51,6 +49,7 @@ function togglePrepQual(){
   if(displayPrepareQualificacion === "none" ){
     setDisplayRegister("none")
     setPrepareQualificacion("")
+    setTrabalhoEmEquipe("none")
   }else{
     setPrepareQualificacion("none")
   }
