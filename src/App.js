@@ -2,9 +2,8 @@
 import { useState } from 'react';
 import './App.css';
 import Cadastro from './Componentes/Cadastro/Cadastro.jsx';
-
-
 import PreparoQualificacao from './Componentes/PreparoQualificação/PreparoQualificação.jsx';
+import TrabalhoEmEquipe from './Componentes/TrabalhoEmEquipe/TrabalhoEmEquipe.jsx'
 
 
 function App() {
@@ -15,6 +14,7 @@ function App() {
   const [management,setManagement] = useState("")
   const [displayRegister,setDisplayRegister] = useState("none")
   const [displayPrepareQualificacion, setPrepareQualificacion] = useState("none")
+  const [displayTrabalhoEmEquipe, setTrabalhoEmEquipe] = useState("none")
   // const [resumeItemPrepQuali, setResumeItemPrepQuali] = useState()
  
   // console.log(resumeItemPrepQuali)
@@ -34,9 +34,7 @@ function updateManagement(management){
   setManagement(management)
 }
 
-// function updateResumePrepQuali(value){
-//   setResumeItemPrepQuali(value)
-// }
+
 
 
 function toggleRegister(){
@@ -55,6 +53,15 @@ function togglePrepQual(){
     setPrepareQualificacion("")
   }else{
     setPrepareQualificacion("none")
+  }
+}
+function toggleTrabalhoEmEquipe(){
+  if(displayTrabalhoEmEquipe === "none" ){
+    setDisplayRegister("none")
+    setPrepareQualificacion("none")
+    setTrabalhoEmEquipe("")
+  }else{
+    setTrabalhoEmEquipe("none")
   }
 }
 
@@ -94,24 +101,33 @@ function onSubmitRegister(){
   
           <div onSubmit={onSubmitRegister} className="app">
             <h1>Avaliação de Desempenho</h1>
-            <div className='btnContainer'>
-              <div onClick={toggleRegister}  className='btnRegister'>Cadastro</div>
-              <div onClick={togglePrepQual}  className='btnPreparationQualification'>Preparo e Qualificação</div>
-            </div>
-            <Cadastro
-            display={displayRegister}
-            updateName={updateName}
-            updateOffice={updateOffice}
-            updateRegistration={updateRegistration}
-            updateManagement={updateManagement}
-        
-            />
-
-            <PreparoQualificacao
-            display={displayPrepareQualificacion}
-            module="1."
-            // updateResumePrepQuali = {updateResumePrepQuali}
-            />
+            <section className='mainContainer'>
+              <div className='btnContainer'>
+                <div onClick={toggleRegister}  className='btnRegister'>Cadastro</div>
+                <div onClick={togglePrepQual}  className='btnPreparationQualification'>Preparo e Qualificação</div>
+                <div onClick={toggleTrabalhoEmEquipe}  className='btnPreparationQualification'>Trabalho em equipe</div>
+                
+              </div>
+              <div className='formContainer'>
+                <Cadastro
+                display={displayRegister}
+                updateName={updateName}
+                updateOffice={updateOffice}
+                updateRegistration={updateRegistration}
+                updateManagement={updateManagement}
+                />
+                <PreparoQualificacao
+                display={displayPrepareQualificacion}
+                module="1."
+                // updateResumePrepQuali = {updateResumePrepQuali}
+                />
+                <TrabalhoEmEquipe
+                display={displayTrabalhoEmEquipe}
+                module="1."
+                // updateResumePrepQuali = {updateResumePrepQuali}
+                />
+              </div>
+          </section>
 
         
         </div>
