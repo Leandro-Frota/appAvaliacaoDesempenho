@@ -42,7 +42,7 @@ function Cadastro({updateName,updateOffice,updateRegistration,updateManagement,u
            
 
             </section>
-            <button>Enviar</button>
+        
         </div>
     )
 }

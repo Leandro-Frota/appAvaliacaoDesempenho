@@ -46,7 +46,7 @@ function TrabalhoEmEquipe({module,display,updateResumePrepQuali}){
             <h2><span>{module}</span>Trabaho em equipe</h2>
             <Question
             item="2.1"
-            title='interação'
+            title='Interação'
             description='Interage e mantém com relacionamento com os seus pares,chefias e outras equipes,
                         contribuindo para o trabalho de outras áreas'
             pounds = {captureValueQuestion1}
@@ -63,7 +63,7 @@ function TrabalhoEmEquipe({module,display,updateResumePrepQuali}){
                       
             <p className="pounds">Pontuação Trabalho em equipe : {valueSum}</p>
 
-            <button >Enviar</button>
+          
             
         </div>
     )

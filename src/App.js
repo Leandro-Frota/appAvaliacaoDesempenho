@@ -4,6 +4,8 @@ import './App.css';
 import Cadastro from './Componentes/Cadastro/Cadastro.jsx';
 import PreparoQualificacao from './Componentes/PreparoQualificação/PreparoQualificação.jsx';
 import TrabalhoEmEquipe from './Componentes/TrabalhoEmEquipe/TrabalhoEmEquipe.jsx'
+import ButtonsMenu from './Componentes/ButtonsMenu/ButtonsMenu.jsx';
+import Header from './Componentes/Header/Header.jsx';
 
 
 function App() {
@@ -15,9 +17,7 @@ function App() {
   const [displayRegister,setDisplayRegister] = useState("none")
   const [displayPrepareQualificacion, setPrepareQualificacion] = useState("none")
   const [displayTrabalhoEmEquipe, setTrabalhoEmEquipe] = useState("none")
-  // const [resumeItemPrepQuali, setResumeItemPrepQuali] = useState()
- 
-  // console.log(resumeItemPrepQuali)
+
 
 function updateName(name){
     setName(name)
@@ -73,7 +73,7 @@ function onSubmitRegister(){
     office,
     registration,
     management,
-    // resumeItemPrepQuali
+   
   });
   
   const requestOptions = {
@@ -99,13 +99,18 @@ function onSubmitRegister(){
   return (
   
           <div onSubmit={onSubmitRegister} className="app">
-            <h1>Avaliação de Desempenho</h1>
+            <Header title={"Avaliação de desempenho"} />
             <section className='mainContainer'>
               <div className='btnContainer'>
-                <div onClick={toggleRegister}  className='btnRegister'>Cadastro</div>
-                <div onClick={togglePrepQual}  className='btnPreparationQualification'>Preparo e Qualificação</div>
-                <div onClick={toggleTrabalhoEmEquipe}  className='btnPreparationQualification'>Trabalho em equipe</div>
-                
+                <ButtonsMenu
+                 name={"Cadastro"}
+                 onClick = {toggleRegister}/>
+                 <ButtonsMenu
+                 name={"Preparo e Qualificação"}
+                 onClick = {togglePrepQual}/>
+                   <ButtonsMenu
+                 name={"Trabalho em equipe"}
+                 onClick = {toggleTrabalhoEmEquipe}/>                
               </div>
               <div className='formContainer'>
                 <Cadastro
@@ -118,12 +123,12 @@ function onSubmitRegister(){
                 <PreparoQualificacao
                 display={displayPrepareQualificacion}
                 module="1."
-                // updateResumePrepQuali = {updateResumePrepQuali}
+               
                 />
                 <TrabalhoEmEquipe
                 display={displayTrabalhoEmEquipe}
-                module="1."
-                // updateResumePrepQuali = {updateResumePrepQuali}
+                module="2."
+                
                 />
               </div>
           </section>

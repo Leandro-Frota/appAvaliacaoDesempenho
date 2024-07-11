@@ -23,7 +23,7 @@ function PreparoQualificacao({module,display,updateResumePrepQuali}){
         valueQuestion1,
         justifyQuestion1
     }
-    // updateResumePrepQuali("resumePrepQuali")
+
 
     console.log(resumePrepQuali)
 
@@ -64,20 +64,13 @@ function PreparoQualificacao({module,display,updateResumePrepQuali}){
         setJustifyQuestion6(value)
     }
 
-    // function onSubmitPrepQuali(resumePrepQuali){
-    //     updateResumePrepQuali(resumePrepQuali)
-    // }
 
    useEffect(()=>{ 
     const total = valueQuestion1 + valueQuestion2 + valueQuestion3 + valueQuestion4 + valueQuestion5+valueQuestion6;
     setValueSum(total);
     },[valueQuestion1,valueQuestion2,valueQuestion3,valueQuestion4,valueQuestion5,valueQuestion6]) // monitora as mudanças nas variáveis, qunando um dos valores muda o efeito é executado.
 
-//   useEffect(()=>{
-//     const resume = {valueQuestion1,justifyQuestion1};
-//     updateResumePrepQuali(resume);
 
-//   },[updateResumePrepQuali,valueQuestion1,justifyQuestion1])
 
     return(
         <div  className="container" style={{display: display}}>
@@ -134,8 +127,6 @@ function PreparoQualificacao({module,display,updateResumePrepQuali}){
 
             <p className="pounds">Pontuação Preparo e Qualificação : {valueSum}</p>
 
-            <button >Enviar</button>
-            
         </div>
     )
     

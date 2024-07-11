@@ -1,0 +1,12 @@
+.btn{
+
+    background-color: #192734;
+    padding: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+  
+  }
+  
+  .btn:hover{
+     background-color: #304b64e3;
+    }

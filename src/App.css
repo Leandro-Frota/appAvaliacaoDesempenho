@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
+
  
 }
 
@@ -41,7 +41,7 @@
 }
 
 .btnContainer div{
-  border: 1px solid #777C83;
+
   background-color: #192734;
   padding: 0.5rem;
   text-align: center;
