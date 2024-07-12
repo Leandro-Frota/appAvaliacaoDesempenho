@@ -6,6 +6,8 @@ import PreparoQualificacao from './Componentes/PreparoQualificação/PreparoQual
 import TrabalhoEmEquipe from './Componentes/TrabalhoEmEquipe/TrabalhoEmEquipe.jsx'
 import ButtonsMenu from './Componentes/ButtonsMenu/ButtonsMenu.jsx';
 import Header from './Componentes/Header/Header.jsx';
+import CompromissoComResultados from './Componentes/CompromissoComResultados/CompromissoComResultados.jsx';
+import Comportamento from './Componentes/Comportamento/Comportamento.jsx'
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
   const [displayRegister,setDisplayRegister] = useState("none")
   const [displayPrepareQualificacion, setPrepareQualificacion] = useState("none")
   const [displayTrabalhoEmEquipe, setTrabalhoEmEquipe] = useState("none")
+  const [displayCompromissoComResultado, setDisplayTrabalhoComResultado] = useState("none")
+  const [displayComportamento, setDisplayComportamento] = useState("none")
 
 
 function updateName(name){
@@ -39,6 +43,8 @@ function toggleRegister(){
     setPrepareQualificacion("none")
     setDisplayRegister("")
     setTrabalhoEmEquipe("none")
+    setDisplayTrabalhoComResultado('none')
+    setDisplayComportamento("none")
   }else{
     setDisplayRegister("none")
   }
@@ -61,6 +67,27 @@ function toggleTrabalhoEmEquipe(){
     setTrabalhoEmEquipe("")
   }else{
     setTrabalhoEmEquipe("none")
+  }
+}
+function toggleCompromissoComResultado(){
+  if(displayCompromissoComResultado === "none") {
+    setDisplayRegister("none")
+    setPrepareQualificacion("none")
+    setTrabalhoEmEquipe("none")
+    setDisplayTrabalhoComResultado("")
+  }else{
+    setDisplayTrabalhoComResultado("none")
+  }
+}
+function toggleComportamento(){
+  if(displayComportamento === "none") {
+    setDisplayRegister("none")
+    setPrepareQualificacion("none")
+    setTrabalhoEmEquipe("none")
+    setDisplayTrabalhoComResultado("none")
+    setDisplayComportamento("")
+  }else{
+    setDisplayComportamento("none")
   }
 }
 
@@ -108,9 +135,15 @@ function onSubmitRegister(){
                  <ButtonsMenu
                  name={"Preparo e Qualificação"}
                  onClick = {togglePrepQual}/>
-                   <ButtonsMenu
+                  <ButtonsMenu
                  name={"Trabalho em equipe"}
-                 onClick = {toggleTrabalhoEmEquipe}/>                
+                 onClick = {toggleTrabalhoEmEquipe}/>
+                  <ButtonsMenu
+                 name={"Compromisso com resultado"}
+                 onClick = {toggleCompromissoComResultado}/>
+                  <ButtonsMenu
+                 name={"Comportamento"}
+                 onClick = {toggleComportamento}/>            
               </div>
               <div className='formContainer'>
                 <Cadastro
@@ -130,6 +163,13 @@ function onSubmitRegister(){
                 module="2."
                 
                 />
+                <CompromissoComResultados
+                display={displayCompromissoComResultado}
+                module="3."/>
+             
+              <Comportamento
+                display={displayComportamento}
+                module="4."/>
               </div>
           </section>
 

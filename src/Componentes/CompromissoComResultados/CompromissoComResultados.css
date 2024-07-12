@@ -1,0 +1,20 @@
+.container{
+    height: 100%;
+    margin-top: 1rem;
+    color: #fff;
+    padding: 1rem;
+
+    
+}
+
+h2{
+    text-align: center;
+}
+
+.pounds{
+    text-align: end;
+    
+}
+span{
+    margin-right: 0.5rem;
+}
