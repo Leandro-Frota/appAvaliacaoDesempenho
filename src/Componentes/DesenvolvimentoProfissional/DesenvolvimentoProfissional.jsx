@@ -1,4 +1,4 @@
-import "./PreparoQualificacao.css"
+import "./DesenvolvimentoProfissional.css"
 import Question from "../Question/Question";
 import { useEffect, useState } from "react";
 
@@ -83,7 +83,6 @@ function PreparoQualificacao({module,display,updateResumePrepQuali}){
                         atividades e serviços prestados sob a sua responsabilidade.'
             pounds = {captureValueQuestion1}
             captureJustifyItemA = {captureJustify1}
-            DesenvolvimentProfissional = {false}
             />
             <Question
             item="1.2"
@@ -92,7 +91,6 @@ function PreparoQualificacao({module,display,updateResumePrepQuali}){
                          relacionando-os de forma lógica.'
             pounds = {captureValueQuestion2}
             captureJustifyItemA = {captureJustify2}
-            DesenvolvimentProfissional = {false}
             />
              <Question
              item="1.3"
@@ -101,7 +99,6 @@ function PreparoQualificacao({module,display,updateResumePrepQuali}){
                         a melhoria das atividades e processos.'
             pounds = {captureValueQuestion3}
             captureJustifyItemA = {captureJustify3}
-            DesenvolvimentProfissional = {false}
             />
              <Question
             item="1.4"
@@ -110,7 +107,6 @@ function PreparoQualificacao({module,display,updateResumePrepQuali}){
                         em vantagem para a empresa.'
             pounds = {captureValueQuestion4}
             captureJustifyItemA = {captureJustify4}
-            DesenvolvimentProfissional = {false}
             />
             <Question
             item="1.5"
@@ -119,7 +115,6 @@ function PreparoQualificacao({module,display,updateResumePrepQuali}){
                         que utiliza para a realização do seu trabalho'
             pounds = {captureValueQuestion5}
             captureJustifyItemA = {captureJustify5}
-            DesenvolvimentProfissional = {false}
             />
             <Question
             item="1.6"
@@ -128,7 +123,6 @@ function PreparoQualificacao({module,display,updateResumePrepQuali}){
                         clara e objetiva, certificando-se do entendimento das mensagens transmitidas.'
             pounds = {captureValueQuestion6}
             captureJustifyItemA = {captureJustify6}
-            DesenvolvimentProfissional = {false}
             />
 
             <p className="pounds">Pontuação Preparo e Qualificação : {valueSum}</p>
@@ -139,5 +133,3 @@ function PreparoQualificacao({module,display,updateResumePrepQuali}){
 }
 
 export default PreparoQualificacao
-
-// onSubmit={onSubmitPrepQuali}

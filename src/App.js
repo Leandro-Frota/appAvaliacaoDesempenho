@@ -152,10 +152,12 @@ function onSubmitRegister(){
                 updateOffice={updateOffice}
                 updateRegistration={updateRegistration}
                 updateManagement={updateManagement}
+                DesenvolvimentProfissional = {false}
                 />
                 <PreparoQualificacao
                 display={displayPrepareQualificacion}
                 module="1."
+                
                
                 />
                 <TrabalhoEmEquipe

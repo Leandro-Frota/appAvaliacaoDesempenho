@@ -60,3 +60,9 @@ textarea{
 span{
     margin-right: 0.5rem;
 }
+
+.nameCourse{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

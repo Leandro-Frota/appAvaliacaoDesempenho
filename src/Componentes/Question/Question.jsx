@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './Question.css'
 import Justify from '../Justificativa/Jistificativa'
 
-function Quiz({title,description, pounds, item,captureJustifyItemA}){
+function Quiz({title,description, pounds, item,captureJustifyItemA,DesenvolvimentProfissional}){
 
     const [valueA, setValueA] = useState(false)
     const [valueB, setValueB] = useState(false)
@@ -48,35 +48,71 @@ function Quiz({title,description, pounds, item,captureJustifyItemA}){
          }},[valueA, valueB, valueC])
     
     return(
+        <div>
+            {DesenvolvimentProfissional ? 
+             
+                <div className='quizContainer'>
+                        <div className='quizContent'>                
+                                <div className='quizContentType'>
+                                    <p><span>{item}</span>{title}</p>
+                                </div>
+                                <div className='quizContentTypeDescription'>
+                                <p> {description}</p>
+                                </div>
+                                <div className='quizContentTypeValours'>
+                                    <div className='nameCourse'>
+                                        <input type="text" placeholder='Nome do curso' />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="inputA">A</label>
+                                        <input  onChange={capturePoundsA} className='inputA' type="checkbox" />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="inputB">B</label>
+                                        <input onChange={capturePoundsB} className='inputB' type="checkbox" />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="inputC">C</label>
+                                        <input onChange={capturePoundsC}  className='inputC' type="checkbox" />
+                                    </div>
+                                </div>
+                            
+                        </div> 
+                                   
+                </div>
 
-        <div className='quizContainer'>
-            <div className='quizContent'>                
-                    <div className='quizContentType'>
-                        <p><span>{item}</span>{title}</p>
-                    </div>
-                    <div className='quizContentTypeDescription'>
-                       <p> {description}</p>
-                    </div>
-                    <div className='quizContentTypeValours'>
-                        <div>
-                            <label htmlFor="inputA">A</label>
-                            <input  onChange={capturePoundsA} className='inputA' type="checkbox" />
-                        </div>
-                        <div>
-                            <label htmlFor="inputB">B</label>
-                            <input onChange={capturePoundsB} className='inputB' type="checkbox" />
-                        </div>
-                        <div>
-                            <label htmlFor="inputC">C</label>
-                            <input onChange={capturePoundsC}  className='inputC' type="checkbox" />
-                        </div>
-                    </div>
-                   
-            </div> 
-            <Justify  valueA={valueA} captureJustify={captureJustifyItemA} required/>                   
-     </div>
+            :   
+                
+                    <div className='quizContainer'>
+                        <div className='quizContent'>                
+                                <div className='quizContentType'>
+                                    <p><span>{item}</span>{title}</p>
+                                </div>
+                                <div className='quizContentTypeDescription'>
+                                <p> {description}</p>
+                                </div>
+                                <div className='quizContentTypeValours'>
+                                    <div>
+                                        <label htmlFor="inputA">A</label>
+                                        <input  onChange={capturePoundsA} className='inputA' type="checkbox" />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="inputB">B</label>
+                                        <input onChange={capturePoundsB} className='inputB' type="checkbox" />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="inputC">C</label>
+                                        <input onChange={capturePoundsC}  className='inputC' type="checkbox" />
+                                    </div>
+                                </div>
+                            
+                        </div> 
+                        <Justify  valueA={valueA} captureJustify={captureJustifyItemA} required/>                   
+                </div>
+            }
+    </div>
 
-            )
+    )
 }
 
 export default Quiz
