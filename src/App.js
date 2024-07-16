@@ -8,6 +8,7 @@ import ButtonsMenu from './Componentes/ButtonsMenu/ButtonsMenu.jsx';
 import Header from './Componentes/Header/Header.jsx';
 import CompromissoComResultados from './Componentes/CompromissoComResultados/CompromissoComResultados.jsx';
 import Comportamento from './Componentes/Comportamento/Comportamento.jsx'
+import DesenvolvimentoProfissional from "./Componentes/DesenvolvimentoProfissional/DesenvolvimentoProfissional.jsx"
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
   const [displayTrabalhoEmEquipe, setTrabalhoEmEquipe] = useState("none")
   const [displayCompromissoComResultado, setDisplayTrabalhoComResultado] = useState("none")
   const [displayComportamento, setDisplayComportamento] = useState("none")
+  const [displayDesProf,setDisplayDesenvolvimentoProfissional] = useState("none")
 
 
 function updateName(name){
@@ -45,6 +47,7 @@ function toggleRegister(){
     setTrabalhoEmEquipe("none")
     setDisplayTrabalhoComResultado('none')
     setDisplayComportamento("none")
+    setDisplayDesenvolvimentoProfissional("none")
   }else{
     setDisplayRegister("none")
   }
@@ -56,6 +59,7 @@ function togglePrepQual(){
     setDisplayRegister("none")
     setPrepareQualificacion("")
     setTrabalhoEmEquipe("none")
+    setDisplayDesenvolvimentoProfissional("none")
   }else{
     setPrepareQualificacion("none")
   }
@@ -65,6 +69,7 @@ function toggleTrabalhoEmEquipe(){
     setDisplayRegister("none")
     setPrepareQualificacion("none")
     setTrabalhoEmEquipe("")
+    setDisplayDesenvolvimentoProfissional("none")
   }else{
     setTrabalhoEmEquipe("none")
   }
@@ -75,6 +80,7 @@ function toggleCompromissoComResultado(){
     setPrepareQualificacion("none")
     setTrabalhoEmEquipe("none")
     setDisplayTrabalhoComResultado("")
+    setDisplayDesenvolvimentoProfissional("none")
   }else{
     setDisplayTrabalhoComResultado("none")
   }
@@ -85,9 +91,23 @@ function toggleComportamento(){
     setPrepareQualificacion("none")
     setTrabalhoEmEquipe("none")
     setDisplayTrabalhoComResultado("none")
+    setDisplayDesenvolvimentoProfissional("none")
     setDisplayComportamento("")
   }else{
     setDisplayComportamento("none")
+  }
+}
+
+function toggleDesProf(){
+  if(displayDesProf === "none") {
+    setDisplayRegister("none")
+    setPrepareQualificacion("none")
+    setTrabalhoEmEquipe("none")
+    setDisplayTrabalhoComResultado("none")
+    setDisplayComportamento("none")
+    setDisplayDesenvolvimentoProfissional("")
+  }else{
+    setDisplayDesenvolvimentoProfissional("none")
   }
 }
 
@@ -143,7 +163,11 @@ function onSubmitRegister(){
                  onClick = {toggleCompromissoComResultado}/>
                   <ButtonsMenu
                  name={"Comportamento"}
-                 onClick = {toggleComportamento}/>            
+                 onClick = {toggleComportamento}/>
+                 <ButtonsMenu 
+                   name={"Desenvolvimento Prossional"}
+                   onClick = {toggleDesProf}/>
+                          
               </div>
               <div className='formContainer'>
                 <Cadastro
@@ -169,10 +193,14 @@ function onSubmitRegister(){
                 display={displayCompromissoComResultado}
                 module="3."/>
              
-              <Comportamento
+                <Comportamento
                 display={displayComportamento}
                 module="4."/>
-              </div>
+                
+                <DesenvolvimentoProfissional
+                display = {displayDesProf}
+                module = '5.'/>
+               </div>
           </section>
 
         
