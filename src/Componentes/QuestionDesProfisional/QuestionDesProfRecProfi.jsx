@@ -31,17 +31,13 @@ function QuizDesProfRecInt({description, pounds, item,pontuation,captureNameCour
             setValueTotal(0)
         }
             
-            },[valueA])
+            },[valueA, pontuation])
     
     return(
         <div>
                       
                 <div className='quizContainer'>
                         <div className='quizContent'>                
-                                {/* <div className='quizContentType'>
-                                    <p><span>{item}</span>{title}</p>
-                                    
-                                </div> */}
                                 <div className='quizContentTypeDescription'>
                                 <p><span>{item}</span> {description}</p>
                                 </div>

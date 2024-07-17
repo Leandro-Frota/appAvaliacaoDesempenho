@@ -43,9 +43,8 @@ function DesenvolvimentoProfissional({module,display,updateResumePrepQuali}){
             </p>
             <QuizDesProfRecInt
             item="5.1"
-            description='O empregado tem o conhecimento e habilidade necessários 
-                        ao desenvolvimento das suas atividades, expressa confiança nas informações,
-                        atividades e serviços prestados sob a sua responsabilidade.'
+            description='Cursos promovidos pela empresa dentro da área de atuação do empregado com carga
+                            horária de 80 horas(4 pontos).'
             pounds = {captureValueQuestion1}
             captureNameCourse1 = {captureNameCourse1}
             pontuation = {4}
