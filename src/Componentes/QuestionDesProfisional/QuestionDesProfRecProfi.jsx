@@ -6,9 +6,11 @@ function QuizDesProfRecInt({description, pounds, item,pontuation,captureNameCour
 
     const [valueA, setValueA] = useState(false)
     const [valueTotal, setValueTotal] = useState(0)
+    const [valueCourse,setValueCourse] = useState("")
     
 
     pounds(valueTotal)
+    captureNameCourse1(valueCourse)
 
  
     function capturePoundsA(e){
@@ -18,17 +20,18 @@ function QuizDesProfRecInt({description, pounds, item,pontuation,captureNameCour
 
     function captureCourse(e){
        
-        captureNameCourse1(e.target.checked)
+        setValueCourse(e.target.value)
     }
-
-
-   
 
     useEffect(()=>{
 
         if(valueA){
             setValueTotal(pontuation)
-             }},[valueA])
+        }else{
+            setValueTotal(0)
+        }
+            
+            },[valueA])
     
     return(
         <div>
